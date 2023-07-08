@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>All Blog Posts</h1>
+  {% for post in posts %}
+    <div class="post">
+      <a href="/post/{{ post.id }}">
+        <h2>{{ post.title }}</h2>
+      </a>
+      <p>Author: {{ post.author }}</p>
+      <!-- <p>Created at: {{ post.created_at }}</p>
+      <p>{{ post.content }}</p> -->
+    </div>
+  {% empty %}
+    <p>No blog posts found.</p>
+  {% endfor %}
+{% endblock %}
