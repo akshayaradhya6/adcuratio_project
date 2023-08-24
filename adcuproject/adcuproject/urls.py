@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-from adcuapp.views import UserRegistrationAPIView, UserLoginAPIView,PostListCreateAPIView, PostDetailAPIView,post_detail,post_list
+from adcuapp.views import UserRegistrationAPIView, UserLoginAPIView,PostListCreateAPIView, PostDetailAPIView,post_detail,post_list,conflicts
 
 
 urlpatterns = [
@@ -29,5 +29,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('posts/', post_list, name='post_list'),
     path('posts/<int:pk>/', post_detail, name='post_detail'),
+    path('conflicts/',conflicts)
     
 ]
